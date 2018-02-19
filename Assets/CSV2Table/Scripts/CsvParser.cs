@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using UnityEngine;
 
 public class CsvParser
 {
@@ -208,8 +209,9 @@ public class CsvParser
             }
             currentState = currentState.EndOfLine(context);
         }
-        List<string[]> allLines = context.GetAllLines();
-        return allLines.ToArray();
+        List<string[]> Lines = context.GetAllLines();
+		Debug.Log (Lines);
+        return Lines.ToArray();
     }
 
 	public static string[][] Parse(string input)
